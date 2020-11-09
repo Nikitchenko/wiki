@@ -1,0 +1,47 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+
+    Add Article
+    
+{% endblock %}
+
+{% block body %}
+
+<h1>Add new Article</h1>
+<div>
+    <!--
+    <form action =  "/wiki/{{ entry }}" method="POST"  >
+        {% csrf_token %}
+        <textarea>
+            {{ article }}
+        </textarea>
+        <br>
+        <div>
+            <span >
+                <button> <a href = "/wiki/{{entry}}"> Back to {{ entry }}  </a></button>
+            </span>
+            <span>
+                <input type="submit" style="background-color: rgb(54, 127, 211); " value="Submit changes" placeholder=" edit" >
+            </span>
+        </div>
+    </form>
+    -->
+    <form action =  "/wiki/newArticle/add" method="POST"  >
+        {% csrf_token %}
+        <div style="color: red; font-weight: bold;" >
+            {{ wrong_title}}
+        </div>
+        {{ form }}
+        <br>
+        <span>
+            <input type="submit" style="background-color: rgb(54, 127, 211); " value="Submit changes" >
+        </span>
+        <span >
+            <button> <a href="{% url 'index' %}">Back to Home</a></button>
+        </span>           
+    </form>
+    
+</div>
+
+{% endblock %}
