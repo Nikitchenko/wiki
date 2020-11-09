@@ -1,2 +1,3 @@
 # wiki
-The lerning project Wiki for CS50 HarvardX
+
+This is the learning project **Wiki** for HarvardX CS50 course
